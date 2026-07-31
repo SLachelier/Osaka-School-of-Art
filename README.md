@@ -1,6 +1,6 @@
 # Osaka School of Art
 
-Official website for the Osaka School of Art (大阪芸術学校) — a professional manga education institution based in Osaka, Japan. The website showcases programs, facilities, faculty, and provides enrollment information for aspiring mangaka worldwide.
+Official website for the Osaka School of Art (大阪芸術学校): a professional manga education institution based in Osaka, Japan. The website showcases programs, facilities, faculty, and provides enrollment information for aspiring mangaka worldwide.
 
 ## Overview
 
@@ -213,6 +213,9 @@ For inquiries about the school or website:
 - Email: osa.culturalvisa@gmail.com
 - Location: Arles Tanimachi 4F-W, 6-4-6 Tanimachi, Chuo-ku, Osaka 542-0012
 
+For inquiries about the repository or to contact the developer:
+- Email: slachelier@gmail.com
+- Location: United States
 ---
 
 Built with Next.js by the Osaka School of Art development team.
