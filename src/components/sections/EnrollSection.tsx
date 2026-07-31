@@ -196,7 +196,7 @@ export function EnrollSection() {
                     setSubmitted(false);
                     setForm(INITIAL_FORM);
                   }}
-                  className="text-sm text-[var(--color-akane-400)] hover:text-[var(--color-akane-300)] underline underline-offset-2 mt-2"
+                  className="text-sm text-[var(--color-akane-400)] hover:text-[var(--color-akane-300)] underline underline-offset-2 mt-2 cursor-pointer"
                 >
                   Submit another enquiry
                 </button>
@@ -353,7 +353,7 @@ export function EnrollSection() {
                       Submitting…
                     </span>
                   ) : (
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 cursor-pointer">
                       <Send size={16} />
                       Submit Enquiry
                     </span>

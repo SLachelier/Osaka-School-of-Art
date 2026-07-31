@@ -31,29 +31,12 @@ export function HeroSection() {
       {/* ── Background: radial crimson glow ───────────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {/* Primary glow — top center */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[var(--color-akane-600)]/10 blur-[120px]" />
+        <div className="absolute top-0 left-1/4 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full bg-[var(--color-akane-300)]/30 blur-[150px]" />
         {/* Secondary glow — bottom right */}
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-[var(--color-cyan-600)]/8 blur-[100px]" />
+        <div className="absolute bottom-0 right-0 w-[1200px] h-[1200px] rounded-full bg-[var(--color-cyan-400)]/30 blur-[150px]" />
       </div>
 
-      {/* ── Background: speed lines radiating from headline focal point ─── */}
-      <div
-        className="absolute inset-0 pointer-events-none select-none overflow-hidden"
-        aria-hidden="true"
-      >
-        <SpeedLines count={110} focalX={500} focalY={400} />
-      </div>
 
-      {/* ── Decorative vertical lines ─────────────────────────────────────── */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {[15, 35, 65, 85].map((pct) => (
-          <div
-            key={pct}
-            className="absolute top-0 bottom-0 w-px bg-[var(--color-sumi-800)]/50"
-            style={{ left: `${pct}%` }}
-          />
-        ))}
-      </div>
 
       {/* ── Main content ──────────────────────────────────────────────────── */}
       <motion.div

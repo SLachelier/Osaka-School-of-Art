@@ -9,27 +9,32 @@ This is a modern, performant single-page application built with Next.js 16, feat
 ## Tech Stack
 
 ### Core Framework
+
 - **Next.js 16.2.9** - React framework with App Router and Turbopack
 - **React 19.2.4** - UI library
 - **TypeScript 5** - Type-safe development
 
 ### Styling & Animation
+
 - **Tailwind CSS 4** - Utility-first CSS framework
 - **Framer Motion 12** - Production-ready motion library
 - **Custom CSS Variables** - Theme-aware design tokens
 
 ### UI Components
+
 - **Radix UI** - Accessible component primitives (Accordion, Dialog, Navigation)
 - **Lucide React** - Icon system
 - **React Intersection Observer** - Scroll-based animations
 
 ### Development Tools
+
 - **ESLint 9** - Code quality and consistency
 - **Sharp** - High-performance image optimization
 
 ## Features
 
 ### Design System
+
 - **Dual Theme Support**: Seamless dark/light mode with localStorage persistence and FOUC prevention
 - **Japanese Aesthetics**: Color palette inspired by traditional Japanese art (Sumi, Washi, Akane)
 - **Brand Colors**: Coral red (#f55546) and cyan blue (#68e0ff) accent system
@@ -37,6 +42,7 @@ This is a modern, performant single-page application built with Next.js 16, feat
 - **Responsive Design**: Mobile-first approach with breakpoint optimization
 
 ### Performance Optimizations
+
 - **Dynamic Imports**: Below-the-fold sections lazy-loaded to reduce initial bundle size
 - **Image Optimization**: Lazy loading with proper sizing and Next.js Image component
 - **CSS Performance**: GPU acceleration, content-visibility, and containment strategies
@@ -44,6 +50,7 @@ This is a modern, performant single-page application built with Next.js 16, feat
 - **Progressive Scrollbar**: Color transitions from coral to cyan based on scroll position
 
 ### User Experience
+
 - **Smooth Animations**: Framer Motion-powered transitions with custom easing curves
 - **Scroll Progress Indicators**: Visual feedback throughout the page
 - **Intersection Observers**: Section-aware navigation with active state tracking
@@ -51,6 +58,7 @@ This is a modern, performant single-page application built with Next.js 16, feat
 - **Mobile-Optimized**: Touch-friendly interface with hamburger menu
 
 ### Sections
+
 1. **Hero**: Full-viewport call-to-action with founding principles
 2. **About**: School mission and founder's story
 3. **Facilities**: Real campus photography and amenities showcase
@@ -64,6 +72,7 @@ This is a modern, performant single-page application built with Next.js 16, feat
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18.x or higher
 - npm, yarn, or pnpm
 
@@ -138,25 +147,30 @@ osa/
 ## Key Implementation Details
 
 ### Theme System
+
 - **Storage**: localStorage with `osa-theme` key
 - **Initialization**: Inline blocking script prevents FOUC
 - **CSS Strategy**: Custom properties remapped for light mode (Sumi/Washi inversion)
 - **Smooth Transitions**: 250ms animations after initial load via `theme-ready` class
 
 ### Color System
+
 Theme-aware CSS variables defined in `globals.css`:
+
 - **Sumi (墨)**: Dark cool neutrals for backgrounds
 - **Washi (和紙)**: Light neutrals for text
 - **Akane (茜)**: Coral red primary accent
 - **Cyan**: Electric blue secondary accent
 
 ### Animation Philosophy
+
 - **Custom Easing**: `[0.25, 0.1, 0.25, 1.0]` for premium feel
 - **Stagger Animations**: Sequential reveals for visual hierarchy
 - **Hover States**: Smooth scale and shadow transitions
 - **Scroll Triggers**: Intersection Observer-based viewport animations
 
 ### Performance Strategy
+
 - **Code Splitting**: Dynamic imports reduce initial JavaScript by ~40%
 - **Image Loading**: Lazy loading below-the-fold, priority for above-the-fold
 - **CSS Containment**: Isolated component boundaries prevent layout thrashing
@@ -165,6 +179,7 @@ Theme-aware CSS variables defined in `globals.css`:
 ## Content Management
 
 All site content is centralized in `src/lib/constants.ts`:
+
 - Navigation items
 - Contact information
 - Program details
@@ -175,6 +190,7 @@ All site content is centralized in `src/lib/constants.ts`:
 ## Deployment
 
 ### Vercel (Recommended)
+
 ```bash
 # Install Vercel CLI
 npm i -g vercel
@@ -184,6 +200,7 @@ vercel
 ```
 
 ### Self-Hosted
+
 ```bash
 # Build for production
 npm run build
@@ -208,12 +225,15 @@ Private - All rights reserved.
 ## Contact
 
 For inquiries about the school or website:
+
 - Email: osa.culturalvisa@gmail.com
 - Location: Arles Tanimachi 4F-W, 6-4-6 Tanimachi, Chuo-ku, Osaka 542-0012
 
 For inquiries about the repository or to contact the developer:
+
 - Email: slachelier@gmail.com
 - Location: United States
+
 ---
 
 Built with Next.js by the Osaka School of Art development team.
