@@ -1,65 +1,78 @@
-import Image from "next/image";
+﻿/**
+ * Homepage - Osaka School of Art
+ *
+ * Performance optimizations:
+ * - Above-the-fold content (Hero, About) loaded immediately
+ * - Below-the-fold sections lazy loaded with dynamic imports
+ * - Improves initial page load time and reduces JavaScript bundle size
+ *
+ * Sections in scroll order:
+ *   1. HeroSection       - Full-viewport CTA with founding pillars
+ *   2. AboutSection      - School mission and Sean Ngo's story
+ *   3. FacilitiesSection - Real campus photography and facility features
+ *   4. ProgramsSection   - Three programs (A/B/C) with real photography
+ *   5. FacultySection    - Sean Ngo founder profile + faculty CTA
+ *   6. TuitionSection    - Transparent pricing breakdown
+ *   7. VisaSection       - Cultural visa pathway guide
+ *   8. FAQSection        - Accordion FAQ
+ *   9. EnrollSection     - Enrollment enquiry form
+ */
 
-export default function Home() {
+import dynamic from "next/dynamic";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { ColorStrip } from "@/components/sections/ColorStrip";
+import { AboutSection } from "@/components/sections/AboutSection";
+
+// Lazy load below-the-fold sections for better performance
+const FacilitiesSection = dynamic(() =>
+  import("@/components/sections/FacilitiesSection").then((mod) => ({
+    default: mod.FacilitiesSection,
+  })),
+);
+const ProgramsSection = dynamic(() =>
+  import("@/components/sections/ProgramsSection").then((mod) => ({
+    default: mod.ProgramsSection,
+  })),
+);
+const FacultySection = dynamic(() =>
+  import("@/components/sections/FacultySection").then((mod) => ({
+    default: mod.FacultySection,
+  })),
+);
+const TuitionSection = dynamic(() =>
+  import("@/components/sections/TuitionSection").then((mod) => ({
+    default: mod.TuitionSection,
+  })),
+);
+const VisaSection = dynamic(() =>
+  import("@/components/sections/VisaSection").then((mod) => ({
+    default: mod.VisaSection,
+  })),
+);
+const FAQSection = dynamic(() =>
+  import("@/components/sections/FAQSection").then((mod) => ({
+    default: mod.FAQSection,
+  })),
+);
+const EnrollSection = dynamic(() =>
+  import("@/components/sections/EnrollSection").then((mod) => ({
+    default: mod.EnrollSection,
+  })),
+);
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <ColorStrip />
+      <HeroSection />
+      <AboutSection />
+      <FacilitiesSection />
+      <ProgramsSection />
+      <FacultySection />
+      <TuitionSection />
+      <VisaSection />
+      <FAQSection />
+      <EnrollSection />
+    </>
   );
 }

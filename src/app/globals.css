@@ -1,26 +1,431 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/**
+ * Osaka School of Art — Global Design Tokens & Base Styles
+ *
+ * Color palette blends traditional Japanese aesthetics with modern vibrancy:
+ *   - Sumi (墨) dark cool neutral grays — deep, refined backgrounds
+ *   - Washi (和紙) light neutral tones — clean, minimal surfaces
+ *   - Akane (茜) coral red as the primary accent (#F55546)
+ *   - Cyan — electric cyan blue for secondary highlights (#68e0ff)
+ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* ── Typography ───────────────────────────────────────────── */
+  --font-lato: var(--font-lato); /* Small text: body, UI elements */
+  --font-fjalla: var(--font-fjalla); /* Medium text: headings, buttons */
+  --font-display: var(--font-display); /* Large text: hero, main titles */
   --font-mono: var(--font-geist-mono);
+
+  /* ── Primary Brand Colors ─────────────────────────────────── */
+  --color-brand-coral: #f55546; /* Primary coral red accent */
+  --color-brand-cyan: #68e0ff; /* Secondary cyan blue accent */
+
+  /* ── Brand Palette ────────────────────────────────────────── */
+
+  /* Sumi — darker cool neutral tones (complements cyan + coral red) */
+  --color-sumi-950: #16191f;
+  --color-sumi-900: #1e2229;
+  --color-sumi-800: #2a2f38;
+  --color-sumi-700: #3d4350;
+  --color-sumi-600: #545b6a;
+
+  /* Washi — light neutral text tones for dark mode */
+  --color-washi-50: #f8f9fa;
+  --color-washi-100: #e9ecef;
+  --color-washi-200: #dee2e6;
+  --color-washi-300: #adb5bd;
+  --color-washi-700: #6c757d;
+
+  /* Akane — coral red primary accent (based on --color-brand-coral) */
+  --color-akane-300: #ff7a6e;
+  --color-akane-400: #ff6b5e;
+  --color-akane-500: var(--color-brand-coral);
+  --color-akane-600: #d93d2e;
+  --color-akane-700: #b82818;
+
+  /* Legacy red aliases for backward compatibility */
+  --color-lighter-red: #ff6b5e;
+  --color-red: var(--color-brand-coral);
+  --color-darker-red: #d93d2e;
+  --color-darkest-red: #b82818;
+
+  /* Cyan — electric cyan blue secondary accent (based on --color-brand-cyan) */
+  --color-cyan-300: #8eeaff;
+  --color-cyan-400: #7de6ff;
+  --color-cyan-500: var(--color-brand-cyan);
+  --color-cyan-600: #4fc9e8;
+  --color-cyan-700: #3aafcd;
+  --color-cyan-800: #2891af;
+
+  /* ── Semantic Aliases ─────────────────────────────────────── */
+  --color-background: var(--color-sumi-950);
+  --color-foreground: var(--color-washi-100);
+  --color-primary: var(--color-akane-500);
+  --color-primary-dark: var(--color-akane-600);
+  --color-accent: var(--color-cyan-500);
+  --color-muted: var(--color-sumi-700);
+  --color-border: var(--color-sumi-700);
+
+  /* ── Spacing & Radius ─────────────────────────────────────── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* ── Transitions ──────────────────────────────────────────── */
+  --transition-base: 200ms ease;
+  --transition-slow: 400ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base Reset & Defaults ──────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent layout shift from scrollbar appearing */
+  scrollbar-gutter: stable;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-lato), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   Applied when <html data-theme="light"> is set.
+
+   Specificity of `html[data-theme="light"]` is (0,1,1) — one tag
+   selector + one attribute selector — which beats Tailwind's
+   `@theme inline` output at `:root` (0,1,0 pseudo-class).
+   This ensures these overrides always win regardless of CSS order.
+
+   Strategy: Re-map the named palette scales so every component
+   that references var(--color-sumi-*) or var(--color-washi-*)
+   automatically receives the correct light-mode value — no
+   component-level changes required.
+
+   Sumi  → becomes clean light neutral backgrounds (lightest → darkest)
+   Washi → becomes deep ink text tones         (lightest → darkest)
+   Akane → darkened coral red for contrast on pale backgrounds
+   Cyan  → darkened cyan blue for readability on pale backgrounds
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Speed-line color adapts to theme ───────────────────────
+   Referenced by SpeedLines.tsx via color="var(--speed-line-color)"
+   Dark mode: subtle white shimmer on ink background
+   Light mode: subtle ink stroke on parchment background
+   ─────────────────────────────────────────────────────────── */
+:root {
+  --speed-line-color: rgba(255, 255, 255, 0.11);
+}
+
+html[data-theme="light"] {
+  --speed-line-color: rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme="light"] {
+  /* ── Sumi: dark backgrounds become light neutral surfaces ─── */
+  --color-sumi-950: #f8f9fa; /* page background — clean white */
+  --color-sumi-900: #eef0f2; /* card / section alt background */
+  --color-sumi-800: #dfe2e6; /* subtle dividers / borders     */
+  --color-sumi-700: #c4c9d1; /* borders                       */
+  --color-sumi-600: #8b919c; /* placeholder / very muted text */
+
+  /* ── Washi: warm off-whites become deep ink tones ─────────── */
+  --color-washi-50: #1a1410; /* primary headings / body text  */
+  --color-washi-100: #2c2318; /* secondary text                */
+  --color-washi-200: #3e3326; /* tertiary text                 */
+  --color-washi-300: #5a4b38; /* muted / caption text          */
+
+  /* ── Akane: darkened coral red for WCAG contrast on pale bg ── */
+  --color-akane-300: #e6432f;
+  --color-akane-400: #d93d2e;
+  --color-akane-500: #b82818;
+  --color-akane-600: #9a1f10;
+  --color-akane-700: #7d1408;
+
+  /* ── Cyan: darkened cyan blue for readability on pale bg ─── */
+  --color-cyan-300: #2891af;
+  --color-cyan-400: #237a93;
+  --color-cyan-500: #1d6579;
+  --color-cyan-600: #175161;
+  --color-cyan-700: #123e4a;
+  --color-cyan-800: #0d2d37;
+}
+
+/* ── Light-mode: gradient-text uses dark-to-gold-to-red ─────── */
+html[data-theme="light"] .gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-sumi-700) 0%,
+    var(--color-cyan-400) 50%,
+    var(--color-akane-400) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Light-mode: Enroll section background ───────────────────── */
+/* The EnrollSection uses a hardcoded dark-red gradient inline;
+   this rule overrides it to a warm parchment-to-rose tone. */
+html[data-theme="light"] #enroll {
+  background: var(--color-sumi-800) 100% !important;
+}
+
+/* ── Smooth theme transitions ────────────────────────────────────
+   The `theme-ready` class is added by ThemeProvider after the
+   first render, so the initial page load never transitions
+   (which would cause a flash). After that, all color properties
+   animate smoothly when data-theme switches.
+   ─────────────────────────────────────────────────────────────── */
+html.theme-ready *,
+html.theme-ready *::before,
+html.theme-ready *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────────── */
+/* Scrollbar color dynamically transitions from coral to cyan based on scroll position.
+   The --scrollbar-thumb-color variable is updated via JavaScript in ScrollbarProgress component. */
+
+:root {
+  --scrollbar-thumb-color: var(--color-akane-600);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sumi-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 3px;
+  transition: background-color 150ms ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.2);
+}
+
+/* ── Selection Highlight ────────────────────────────────────── */
+
+::selection {
+  background-color: var(--color-akane-600);
+  color: var(--color-washi-50);
+}
+
+/* ── Focus Ring (accessibility) ─────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-akane-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Utility: gradient text ─────────────────────────────────── */
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-washi-50) 0%,
+    var(--color-cyan-400) 50%,
+    var(--color-akane-400) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Ink-brush horizontal rule ──────────────────────────────── */
+
+.ink-divider {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-akane-600),
+    var(--color-cyan-500),
+    var(--color-akane-600),
+    transparent
+  );
+  border: none;
+}
+
+/* ── Background texture overlay (subtle paper grain) ────────── */
+
+.paper-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MANGA AESTHETIC UTILITIES
+   Reusable classes that evoke manga / ink-art aesthetics.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Speech bubble: bordered box with downward-left tail ────── */
+.speech-bubble {
+  position: relative;
+  border: 2px solid var(--color-sumi-700);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Outer border triangle (creates the tail outline) */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 28px;
+  border-style: solid;
+  border-width: 14px 9px 0 9px;
+  border-color: var(--color-sumi-700) transparent transparent transparent;
+}
+
+/* Inner fill triangle (hides the box bottom edge inside the tail) */
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  left: 30px;
+  z-index: 1;
+  border-style: solid;
+  border-width: 11px 7px 0 7px;
+  border-color: var(--color-sumi-900) transparent transparent transparent;
+}
+
+html[data-theme="light"] .speech-bubble::before {
+  border-color: var(--color-sumi-900) transparent transparent transparent;
+}
+
+/* ── OSA logo image: invert to dark in light mode ────────────────
+   The logo PNG is white/light on a transparent background —
+   perfect for dark mode. In light mode we flip it to black so
+   it remains legible against the parchment header background.
+   ─────────────────────────────────────────────────────────────── */
+html[data-theme="light"] .osa-logo-img {
+  filter: invert(1) brightness(0.15);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIXED COLOR OVERRIDES
+   These colors remain constant in both light and dark themes
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── H2 spans: always coral red (brand color) in both themes ──────── */
+h2 span {
+  color: var(--color-brand-coral) !important;
+}
+
+/* ── Uppercase text in paragraphs: always cyan (brand color) ───────── */
+p.uppercase,
+p[class*="uppercase"] {
+  color: var(--color-brand-cyan) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TYPOGRAPHY SYSTEM
+   Font application based on size and hierarchy
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Small text (Lato): body, paragraphs, small UI elements ───── */
+body,
+p,
+small,
+.text-xs,
+.text-sm,
+.text-base,
+li,
+span:not(h1 span, h2 span),
+label,
+input,
+textarea,
+select {
+  font-family: var(--font-lato), system-ui, sans-serif;
+}
+
+/* ── Medium text (Fjalla One): medium headings, buttons, labels ── */
+h3,
+h4,
+h5,
+h6,
+button,
+.font-semibold,
+.font-bold:not(h1 *, h2 *),
+.text-lg,
+.text-xl {
+  font-family: var(--font-fjalla), system-ui, sans-serif;
+}
+
+/* ── Large text (Facile Sans): hero, large headings ────────────── */
+h1,
+h2,
+.font-display,
+.text-2xl,
+.text-3xl,
+.text-4xl,
+.text-5xl,
+.text-6xl,
+.text-7xl,
+.text-8xl,
+.text-9xl {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PERFORMANCE OPTIMIZATIONS
+   CSS properties for better rendering and animation performance
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── GPU acceleration for animated elements ────────────────────
+   Tell the browser which properties will change during animations
+   to optimize rendering. Use sparingly on animated elements only.
+   ─────────────────────────────────────────────────────────────── */
+[class*="motion-"],
+[data-framer-component],
+.group:hover > *,
+button:hover,
+a:hover {
+  will-change: transform, opacity;
+}
+
+/* ── Content visibility for off-screen sections ─────────────────
+   Hint to the browser that content below the fold can be skipped
+   during initial layout, improving initial page load time.
+   ─────────────────────────────────────────────────────────────── */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* ── Containment for isolated components ────────────────────────
+   Prevent layout thrashing by containing style/layout calculations
+   within component boundaries.
+   ─────────────────────────────────────────────────────────────── */
+nav,
+aside,
+article {
+  contain: layout style;
+}
+
+/* ── Reduce paint complexity for fixed elements ─────────────────
+   Fixed elements create their own stacking context for better
+   compositing performance.
+   ─────────────────────────────────────────────────────────────── */
+nav,
+.fixed {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
