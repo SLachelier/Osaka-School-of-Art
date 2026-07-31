@@ -4,7 +4,7 @@ Official website for the Osaka School of Art (大阪芸術学校): a professiona
 
 ## Overview
 
-This is a modern, performant single-page application built with Next.js 16, featuring a sophisticated dark/light theme system, smooth animations, and a design that blends traditional Japanese aesthetics with contemporary web design.
+This is a modern, performant single-page application built with Next.js 16, featuring a dark/light theme system and smooth animations.
 
 ## Tech Stack
 
