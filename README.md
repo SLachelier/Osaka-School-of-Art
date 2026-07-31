@@ -172,8 +172,6 @@ All site content is centralized in `src/lib/constants.ts`:
 - FAQ entries
 - Facility features
 
-Update content by editing this single file — no component changes required.
-
 ## Deployment
 
 ### Vercel (Recommended)
