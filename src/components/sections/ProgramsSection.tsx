@@ -168,7 +168,7 @@ export function ProgramsSection() {
               <span className="text-(--color-akane-400)">Three Paths.</span>
             </>
           }
-          subheading="Our instructor reviews your portfolio and places you in the program that fits you best. The cultural visa gives you up to 4 years — enough time to go from complete beginner to professional debut."
+          subheading="Our instructor reviews your portfolio and places you in the program that fits you best. The cultural visa is granted for 1 year and renewable up to 4 years — enough time to go from complete beginner to professional debut."
           className="mb-10"
         />
 

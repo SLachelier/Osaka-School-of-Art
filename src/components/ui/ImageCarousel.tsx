@@ -22,10 +22,13 @@ type Slide = {
 };
 
 const SLIDES: Slide[] = [
-  { src: null, alt: "Studio session photo coming soon" },
-  { src: null, alt: "Student artwork photo coming soon" },
-  { src: null, alt: "Campus photo coming soon" },
-  { src: null, alt: "Instructor at work photo coming soon" },
+  { src: "/osa-door-closeup.jpg", alt: "OSA front door" },
+  { src: "/instruction.jpg", alt: "Instructor giving a lesson" },
+  { src: "/student-progress.jpg", alt: "Student progress" },
+  { src: "/student-with-work.jpg", alt: "Student with their work" },
+  { src: "/instruction2.jpg", alt: "Instructor giving a lesson" },
+  { src: "/OSA-manga-shelf.jpg", alt: "Manga shelves at OSA" },
+  { src: "/osa-sign.jpg", alt: "OSA directory sign" },
 ];
 
 const AUTO_ADVANCE_MS = 6000;

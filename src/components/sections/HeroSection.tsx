@@ -28,15 +28,27 @@ export function HeroSection() {
       className="relative min-h-screen flex flex-col overflow-hidden bg-[var(--color-sumi-950)]"
       aria-label="Welcome to Osaka School of Art"
     >
-      {/* ── Background: radial crimson glow ───────────────────────────────── */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {/* Primary glow — top center */}
-        <div className="absolute top-0 left-1/4 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full bg-[var(--color-akane-300)]/30 blur-[150px]" />
-        {/* Secondary glow — bottom right */}
-        <div className="absolute bottom-0 right-0 w-[1200px] h-[1200px] rounded-full bg-[var(--color-cyan-400)]/30 blur-[150px]" />
-      </div>
+      {/* ── Background image with blur ────────────────────────────────────── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "url('/hero-bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "",
+        }}
+        aria-hidden="true"
+      />
 
-
+      {/* ── Dark overlay for text area ────────────────────────────────────── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 1100px 3000px at center, rgba(0, 0, 0, 0.8), transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
 
       {/* ── Main content ──────────────────────────────────────────────────── */}
       <motion.div
@@ -50,8 +62,8 @@ export function HeroSection() {
           variants={fadeUpVariants}
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-akane-700)]/60 bg-[var(--color-akane-700)]/10 px-4 py-1.5"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-akane-400)] animate-pulse" />
-          <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-akane-300)]">
+          <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+          <span className="text-xs font-semibold tracking-widest uppercase text-white">
             Enrollment Starts Soon · Apply Now
           </span>
         </motion.div>
@@ -69,7 +81,7 @@ export function HeroSection() {
         {/* Sub-headline */}
         <motion.p
           variants={fadeUpVariants}
-          className="mt-6 max-w-2xl text-base text-[var(--color-washi-300)] sm:text-xl leading-relaxed"
+          className="mt-6 max-w-2xl text-base text-[var(--color-washi-300)] sm:text-xl leading-relaxed "
         >
           World-class manga education in the heart of Osaka, Japan. Train under
           published Mangaka. Build your portfolio. Launch your career.

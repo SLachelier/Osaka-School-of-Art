@@ -4,7 +4,7 @@
  * Key facts (updated to reflect the real OSA offering):
  * - The visa is a Japanese Cultural Activities Visa (文化活動ビザ)
  * - Processing time: 1 to 3 months (one of Japan's fastest)
- * - Valid for up to 4 years of study
+ * - Valid for 1 year, renewable up to 4 years total
  * - Guidance is fully included in the OSA admissions process at no extra cost
  *
  * Layout:
@@ -51,7 +51,7 @@ const VISA_STEPS = [
     step: "04",
     title: "Arrive in Osaka",
     description:
-      "Land in Japan, begin your manga education, and start your life in Osaka. The visa is renewable for up to 4 years: enough time to complete all three programs.",
+      "Land in Japan, begin your manga education, and start your life in Osaka. The visa is granted for 1 year and renewable up to 4 years: enough time to complete all three programs.",
   },
 ];
 
@@ -109,7 +109,7 @@ export function VisaSection() {
               </span>
             </>
           }
-          subheading="Enrolling in OSA makes you eligible for a Japanese Cultural Activities Visa, one of the fastest visas to obtain in Japan, with 1 to 3 months of processing time and up to 4 years of valid study."
+          subheading="Enrolling in OSA makes you eligible for a Japanese Cultural Activities Visa, one of the fastest visas to obtain in Japan, with 1 to 3 months of processing time. The visa is granted for 1 year and renewable up to 4 years total."
           className="mb-16"
         />
 
@@ -221,8 +221,8 @@ export function VisaSection() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://static.wixstatic.com/media/e668a5_39008ff1e2b54b7ca8ed80c6c8f7858a~mv2.jpg/v1/fill/w_488,h_375,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_0973.jpg"
-                alt="Yutoku Inari Gate — Japan"
+                src="OSA-building-outside-1.jpg"
+                alt="Outside of the OSA building in Osaka, Japan"
                 className="w-full h-full object-cover opacity-60"
               />
               <div className="absolute inset-0 flex flex-col items-end justify-end p-4">

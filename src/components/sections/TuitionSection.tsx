@@ -2,12 +2,11 @@
  * TuitionSection — Transparent pricing breakdown for the OSA program.
  *
  * Real figures from OSA:
- *   - ~$6,000 USD/year  (€5,000 EUR for EU students)
- *   - ~$1,200 of that covers visa legal-processing fees
- *   - Students must also demonstrate 1-year savings to Japanese immigration
+ *   - 1 million Yen/year (or equivalent)
+ *   - Visa legal processing fees included
+ *   - Students must demonstrate 2 million Yen in savings to Japanese immigration
  *
- * The 4-year cultural visa makes OSA an exceptional value compared to
- * traditional art school degrees.
+ * The cultural visa (1 year, renewable up to 4 years) makes OSA an exceptional value.
  */
 
 "use client";
@@ -26,30 +25,31 @@ const BREAKDOWN = [
   {
     icon: DollarSign,
     title: "Annual Tuition",
-    usd: "~$6,000",
-    eur: "~€5,000",
-    note: "Per year of study. EU students pay in EUR at the rate above.",
+    yen: "¥1,000,000",
+    eur: "€5,500",
+    usd: "$6,350",
+    note: "Per year of study. Includes visa legal processing fees.",
   },
   {
     icon: FileCheck,
     title: "Visa Legal Fees",
-    usd: "~$1,200",
-    eur: "Included",
-    note: "Approximately $1,200 of your tuition covers official visa processing and legal documentation fees.",
+    usd: "Included",
+    eur: "In Tuition",
+    note: "All official visa processing and legal documentation fees are included in your tuition cost.",
   },
   {
     icon: PiggyBank,
     title: "Proof of Savings",
-    usd: "1-Year Living Costs",
+    usd: "¥2,000,000",
     eur: "Required",
-    note: "Japanese immigration requires you to demonstrate sufficient savings to support yourself in Japan for at least one year. The exact amount varies by currency.",
+    note: "Japanese immigration requires you to demonstrate approximately 2 million Yen in savings to support yourself in Japan for at least one year.",
   },
   {
     icon: CalendarDays,
     title: "Visa Duration",
-    usd: "Up to 4 Years",
-    eur: "Cultural Visa",
-    note: "The cultural activities visa can be renewed for up to 4 years, enough time to complete all three programs and pursue your debut.",
+    usd: "1 Year",
+    eur: "Renewable",
+    note: "The cultural activities visa is granted for 1 year and renewable up to 4 years total, enough time to complete all three programs and pursue your debut.",
   },
 ];
 
@@ -76,7 +76,7 @@ export function TuitionSection() {
               <span className="text-[var(--color-akane-400)]">Pricing</span>
             </>
           }
-          subheading="No hidden fees. Approximately $6,000 USD per year covers your instruction, facility access, and visa legal processing: everything you need to study manga in Osaka."
+          subheading="No hidden fees. 1 million Yen per year (or equivalent) covers your instruction, facility access, and visa legal processing: everything you need to study manga in Osaka."
           className="mb-14"
         />
 
@@ -108,7 +108,7 @@ export function TuitionSection() {
                 eur !== "Required" &&
                 eur !== "Cultural Visa" ? (
                   <p className="text-sm text-[var(--color-cyan-500)] mt-1">
-                    {eur} for EU students
+                    
                   </p>
                 ) : (
                   <p className="text-sm text-[var(--color-washi-300)] mt-1">

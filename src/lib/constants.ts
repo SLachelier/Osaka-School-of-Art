@@ -33,7 +33,7 @@ export const CONTACT_ADDRESS_JP = "〒542-0012 中央区谷町6-4-6 アールズ
 // ─── Programs ─────────────────────────────────────────────────────────────────
 // OSA offers three programs assessed by the instructor based on a portfolio
 // review. Each student is placed in the appropriate tier on admissions.
-// The cultural visa allows up to 4 years — enough time to complete all three.
+// The cultural visa is initially granted for 1 year and renewable up to 4 years — enough time to complete all three.
 
 export const PROGRAMS: Program[] = [
   {
@@ -44,7 +44,7 @@ export const PROGRAMS: Program[] = [
       "Designed for those with little to no drawing experience. The course teaches shape, light, value, and composition, then progresses to figure drawing, basic anatomy, and perspective. We finish with line weight and manga panelling. By the end of Program A, you will have the skills of an intermediate artist.",
     duration: "Assessed individually",
     level: "Beginner",
-    icon: "✏️",
+    icon: "",
     accentColor: "border-akane-500",
     topics: [
       "Shape, light, value & composition",
@@ -63,7 +63,7 @@ export const PROGRAMS: Program[] = [
       "For artists with solid drawing experience who want to reach industry standard. We cover the specific techniques working mangaka use: panelling, text blocks, splash pages, and cover composition. Advanced linework, character design, and clothing design are core components. You will graduate with the skills of a professional mangaka.",
     duration: "Assessed individually",
     level: "Intermediate",
-    icon: "🖊️",
+    icon: "",
     accentColor: "border-cyan-500",
     topics: [
       "Manga panelling & text block layout",
@@ -82,7 +82,7 @@ export const PROGRAMS: Program[] = [
       "For artists already at a professional level looking to debut. Program C lets you develop your one-shot manga with full staff support: writing, editing, and advice from a working mangaka. We help you build connections with manga studios and submit your one-shot together. Our goal is publication, or a role as a mangaka's assistant on the path to your debut.",
     duration: "Assessed individually",
     level: "Advanced",
-    icon: "🏆",
+    icon: "",
     accentColor: "border-akane-500",
     topics: [
       "One-shot development & production",
@@ -119,33 +119,78 @@ export const INSTRUCTORS: Instructor[] = [
 
 export const FACILITY_IMAGES = [
   {
-    src: "https://static.wixstatic.com/media/e668a5_d7e1b842d99d43e485f33a1f87995d39~mv2.jpg",
-    alt: "OSA studio — full classroom view",
+    src: "/osa-studio.jpg",
+    alt: "OSA studio view",
     wide: true,
   },
   {
-    src: "https://static.wixstatic.com/media/e668a5_d6d598cd8c884f7aa214d3e6cf18a426~mv2.jpg",
-    alt: "Private desk booth workspace",
+    src: "/osa-closeup.jpg",
+    alt: "A closeup of the OSA building from outside",
     wide: false,
   },
   {
-    src: "https://static.wixstatic.com/media/e668a5_f6491ee56de44a3b9c077ea1241a368b~mv2.jpg",
-    alt: "Individual drawing station",
+    src: "/osa-computer.jpg",
+    alt: "Computer station",
     wide: false,
   },
   {
-    src: "https://static.wixstatic.com/media/e668a5_7ea904540c2f492c8b061f52fb3b96b2~mv2.jpg",
-    alt: "Studio equipment and tools",
-    wide: false,
-  },
-  {
-    src: "https://static.wixstatic.com/media/e668a5_c8822095b8284d3abe82cf628b29c9eb~mv2.jpg",
-    alt: "Classroom overview with workstations",
+    src: "/osa-tables.jpg",
+    alt: "Classroom overview with tables",
     wide: true,
   },
   {
-    src: "https://static.wixstatic.com/media/e668a5_dae1ac1f7b4441c483274f8d227c08b5~mv2.jpg",
-    alt: "Studio workspace detail",
+    src: "/osa-bookshelf.jpg",
+    alt: "Studio bookshelf with manga and art books",
+    wide: true,
+  },
+  {
+    src: "/osa-painting-station.jpg",
+    alt: "Painting station",
+    wide: false,
+  },
+  {
+    src: "/osa-prayer-table.jpg",
+    alt: "Corner table with Japanese prayer items",
+    wide: false,
+  },
+  {
+    src: "/osa-wall-plants.jpg",
+    alt: "Wall with plants",
+    wide: false,
+  },
+  {
+    src: "/osa-signage.jpg",
+    alt: "OSA signage",
+    wide: false,
+  },
+  {
+    src: "/osa-windows2.jpg",
+    alt: "Windows with a view outside",
+    wide: true,
+  },
+  {
+    src: "/osa-windows.jpg",
+    alt: "Windows with a view outside",
+    wide: true,
+  },
+  {
+    src: "/osa-greenery.jpg",
+    alt: "Greenery area",
+    wide: false,
+  },
+  {
+    src: "/student-work.jpg",
+    alt: "Student work",
+    wide: false,
+  },
+  {
+    src: "/osa-building-outside-1.jpg",
+    alt: "OSA building from outside",
+    wide: false,
+  },
+  {
+    src: "/osa-seating.jpg",
+    alt: "Seating area",
     wide: false,
   },
 ];
@@ -171,12 +216,12 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "How long can I study on the cultural visa?",
     answer:
-      "The cultural visa allows up to 4 years of study. This is enough time to progress from Program A all the way through Program C, and potentially debut as a professional mangaka.",
+      "The cultural visa is initially granted for 1 year and is renewable for up to 4 years of study. This is enough time to progress from Program A all the way through Program C, and potentially debut as a professional mangaka.",
   },
   {
     question: "What is the tuition cost?",
     answer:
-      "Tuition is approximately $6,000 USD per year (€5,000 EUR for EU students). Of this, approximately $1,200 covers legal fees for visa processing; the remainder funds teaching, staff, and facility costs. Immigration will also require you to demonstrate sufficient savings to support yourself in Japan for at least one year.",
+      "Tuition is 1 million Yen per year (or equivalent in your currency). This covers teaching, staff, facility costs, and visa legal processing fees. Immigration will also require you to demonstrate sufficient savings of approximately 2 million Yen to support yourself in Japan for at least one year.",
   },
   {
     question: "What skill level do I need to apply?",

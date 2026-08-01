@@ -235,9 +235,9 @@ html.theme-ready *::after {
 .gradient-text {
   background: linear-gradient(
     135deg,
-    var(--color-washi-50) 0%,
+    var(--color-akane-400) 0%,
     var(--color-cyan-400) 50%,
-    var(--color-akane-400) 100%
+    var(--color-washi-50) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
