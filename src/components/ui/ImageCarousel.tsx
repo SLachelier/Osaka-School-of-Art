@@ -29,6 +29,7 @@ const SLIDES: Slide[] = [
   { src: "/instruction2.jpg", alt: "Instructor giving a lesson" },
   { src: "/OSA-manga-shelf.jpg", alt: "Manga shelves at OSA" },
   { src: "/osa-sign.jpg", alt: "OSA directory sign" },
+  { src: "/building-hallway.jpg", alt: "OSA building hallway" },
 ];
 
 const AUTO_ADVANCE_MS = 6000;
@@ -47,7 +48,7 @@ export function ImageCarousel() {
       setDirection(dir);
       setIndex(((next % total) + total) % total);
     },
-    [total]
+    [total],
   );
 
   const goNext = useCallback(() => goTo(index + 1, 1), [goTo, index]);

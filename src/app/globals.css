@@ -162,13 +162,31 @@ html[data-theme="light"] {
 html[data-theme="light"] .gradient-text {
   background: linear-gradient(
     135deg,
-    var(--color-sumi-700) 0%,
+    var(--color-akane-400) 0%,
     var(--color-cyan-400) 50%,
-    var(--color-akane-400) 100%
+    var(--color-sumi-700) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── Light-mode: Hero section text to white ──────────────────── */
+html[data-theme="light"] .hero-heading {
+  color: white;
+}
+
+html[data-theme="light"] .hero-subheading {
+  color: white;
+}
+
+/* ── Light-mode: Navbar text white when transparent ──────────── */
+html[data-theme="light"] .navbar-transparent .nav-link {
+  color: white !important;
+}
+
+html[data-theme="light"] .navbar-transparent .nav-hamburger {
+  color: white !important;
 }
 
 /* ── Light-mode: Enroll section background ───────────────────── */

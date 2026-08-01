@@ -45,7 +45,8 @@ export function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 1100px 3000px at center, rgba(0, 0, 0, 0.8), transparent 70%)",
+          background:
+            "radial-gradient(ellipse 1100px 3000px at center, rgba(0, 0, 0, 0.8), transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -71,7 +72,7 @@ export function HeroSection() {
         {/* Headline */}
         <motion.h1
           variants={fadeUpVariants}
-          className="max-w-4xl text-4xl font-display leading-[1.1] tracking-tight text-[var(--color-washi-50)] sm:text-5xl lg:text-7xl"
+          className="hero-heading max-w-4xl text-4xl font-display leading-[1.1] tracking-tight text-[var(--color-washi-50)] sm:text-5xl lg:text-7xl"
         >
           Learn to draw <span className="gradient-text">Manga</span>
           <br />
@@ -81,7 +82,7 @@ export function HeroSection() {
         {/* Sub-headline */}
         <motion.p
           variants={fadeUpVariants}
-          className="mt-6 max-w-2xl text-base text-[var(--color-washi-300)] sm:text-xl leading-relaxed "
+          className="hero-subheading mt-6 max-w-2xl text-base text-[var(--color-washi-300)] sm:text-xl leading-relaxed "
         >
           World-class manga education in the heart of Osaka, Japan. Train under
           published Mangaka. Build your portfolio. Launch your career.

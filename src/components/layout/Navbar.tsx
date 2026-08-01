@@ -101,8 +101,8 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[var(--color-sumi-950)]/90 backdrop-blur-md border-b border-[var(--color-sumi-800)] shadow-lg"
-          : "bg-transparent",
+          ? "navbar-scrolled bg-[var(--color-sumi-950)]/90 backdrop-blur-md border-b border-[var(--color-sumi-800)] shadow-lg"
+          : "navbar-transparent bg-transparent",
       )}
       variants={navbarVariants}
       initial="hidden"
@@ -138,7 +138,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative px-3 py-2 text-sm font-medium transition-colors duration-200 group",
+                  "nav-link relative px-3 py-2 text-sm font-medium transition-colors duration-200 group",
                   activeSection === item.href
                     ? "text-[var(--color-washi-50)]"
                     : "text-[var(--color-washi-300)] hover:text-[var(--color-washi-50)]",
@@ -170,7 +170,7 @@ export function Navbar() {
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <button
-              className="p-2 text-[var(--color-washi-200)] hover:text-[var(--color-washi-50)] transition-colors cursor-pointer"
+              className="nav-hamburger p-2 text-[var(--color-washi-200)] hover:text-[var(--color-washi-50)] transition-colors cursor-pointer"
               onClick={() => setMobileOpen((prev) => !prev)}
               aria-expanded={mobileOpen}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
