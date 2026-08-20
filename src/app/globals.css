@@ -102,12 +102,8 @@ body {
    Specificity of `html[data-theme="light"]` is (0,1,1) — one tag
    selector + one attribute selector — which beats Tailwind's
    `@theme inline` output at `:root` (0,1,0 pseudo-class).
-   This ensures these overrides always win regardless of CSS order.
-
-   Strategy: Re-map the named palette scales so every component
-   that references var(--color-sumi-*) or var(--color-washi-*)
-   automatically receives the correct light-mode value — no
-   component-level changes required.
+   This ensures these overrides always take priority regardless
+   of CSS order.
 
    Sumi  → becomes clean light neutral backgrounds (lightest → darkest)
    Washi → becomes deep ink text tones         (lightest → darkest)
@@ -158,14 +154,9 @@ html[data-theme="light"] {
   --color-cyan-800: #0d2d37;
 }
 
-/* ── Light-mode: gradient-text uses dark-to-gold-to-red ─────── */
+/* ── Light-mode: gradient-text uses same gradient as dark mode ─────── */
 html[data-theme="light"] .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--color-akane-400) 0%,
-    var(--color-cyan-400) 50%,
-    var(--color-sumi-700) 100%
-  );
+  background: linear-gradient(135deg, #ff6b5e 0%, #7de6ff 50%, #f8f9fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -196,12 +187,7 @@ html[data-theme="light"] #enroll {
   background: var(--color-sumi-800) 100% !important;
 }
 
-/* ── Smooth theme transitions ────────────────────────────────────
-   The `theme-ready` class is added by ThemeProvider after the
-   first render, so the initial page load never transitions
-   (which would cause a flash). After that, all color properties
-   animate smoothly when data-theme switches.
-   ─────────────────────────────────────────────────────────────── */
+/* ── Smooth theme transitions ────────────────────────────────────*/
 html.theme-ready *,
 html.theme-ready *::before,
 html.theme-ready *::after {
@@ -288,11 +274,6 @@ html.theme-ready *::after {
   opacity: 0.35;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   MANGA AESTHETIC UTILITIES
-   Reusable classes that evoke manga / ink-art aesthetics.
-   ══════════════════════════════════════════════════════════════ */
-
 /* ── Speech bubble: bordered box with downward-left tail ────── */
 .speech-bubble {
   position: relative;
@@ -329,9 +310,8 @@ html[data-theme="light"] .speech-bubble::before {
 }
 
 /* ── OSA logo image: invert to dark in light mode ────────────────
-   The logo PNG is white/light on a transparent background —
-   perfect for dark mode. In light mode we flip it to black so
-   it remains legible against the parchment header background.
+   The logo PNG is white/light on a transparent background.
+   In light mode it is flipped to black.
    ─────────────────────────────────────────────────────────────── */
 html[data-theme="light"] .osa-logo-img {
   filter: invert(1) brightness(0.15);
@@ -402,13 +382,8 @@ h2,
   font-family: var(--font-display), system-ui, sans-serif;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   PERFORMANCE OPTIMIZATIONS
-   CSS properties for better rendering and animation performance
-   ══════════════════════════════════════════════════════════════ */
-
 /* ── GPU acceleration for animated elements ────────────────────
-   Tell the browser which properties will change during animations
+   Tells the browser which properties will change during animations
    to optimize rendering. Use sparingly on animated elements only.
    ─────────────────────────────────────────────────────────────── */
 [class*="motion-"],
@@ -420,7 +395,7 @@ a:hover {
 }
 
 /* ── Content visibility for off-screen sections ─────────────────
-   Hint to the browser that content below the fold can be skipped
+   Hints to the browser that content below the fold can be skipped
    during initial layout, improving initial page load time.
    ─────────────────────────────────────────────────────────────── */
 section {
@@ -429,7 +404,7 @@ section {
 }
 
 /* ── Containment for isolated components ────────────────────────
-   Prevent layout thrashing by containing style/layout calculations
+   Prevents layout thrashing by containing style/layout calculations
    within component boundaries.
    ─────────────────────────────────────────────────────────────── */
 nav,

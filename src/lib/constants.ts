@@ -103,13 +103,49 @@ export const INSTRUCTORS: Instructor[] = [
   {
     name: "Sean Ngo",
     title: "Founder & Lead Instructor",
-    bio: "Sean is a professional artist and lifelong manga enthusiast who studied fine art at university in San Francisco before relocating to Osaka to bring his vision of an English-language manga school to life.",
+    bio: "Sean Ngo is an accomplished Oil painter who graduated from the Academy of Art University in San Francisco. Originally working from a concept art background and transitioning to fine art, his skills have won him awards and his work has been displayed at various galleries. His next journey has brought him to Japan where he created OSA.",
     imageSrc:
       "https://static.wixstatic.com/media/e668a5_cbc95f28ff1647d5a89b16248567c729~mv2.jpg",
     highlights: [
       "Fine Art graduate — San Francisco art university",
       "Professional artist with experience in visual development and sequential art",
       "Founded OSA to bring world-class manga education to an international audience",
+    ],
+  },
+  {
+    name: "Taichi",
+    title: "Educator & Language Learning Specialist",
+    bio: "Taichi is an educator and entrepreneur based in Osaka. In 2021, he founded Yukei Juku, a private learning center that provides individualized support and English-language programs for children and adults. He continuously conducts independent research into language learning, drawing on his own experience as a language learner and exploring effective methods of language acquisition, teaching and intercultural communication.",
+    imageSrc: "/taichi.jpg",
+    highlights: [
+      "Founder of Yukei Juku private learning center (2021)",
+      "Specializes in English-language education for diverse age groups",
+      "Independent researcher in language acquisition and intercultural communication",
+    ],
+  },
+  {
+    name: "Atsushi Sakaki",
+    title: "Professional Mangaka & Manga Instructor",
+    bio: "Atsushi Sakaki is an accomplished manga artist, comic producer and representative director of A2C Production Co., Ltd. He debuted in 1985 in Kodansha's Monthly Shonen Magazine. He is currently writing and serializing 'The King of Hunger' which is being distributed worldwide. At OSA, he instructs students on how to become accomplished mangaka.",
+    imageSrc: "/atsushi-sakaki.jpg",
+    highlights: [
+      "Debuted in Kodansha's Monthly Shonen Magazine (1985)",
+      "Representative Director of A2C Production Co., Ltd.",
+      "Currently serializing 'The King of Hunger' with worldwide distribution",
+      "Teaches professional mangaka techniques and industry practices",
+    ],
+    portfolioUrl: "/佐佐木あつしポートフォリオ.pdf",
+  },
+  {
+    name: "Cindy",
+    title: "Student Support & Cultural Liaison",
+    bio: "Cindy is a French-English bilingual creative professional with advanced Japanese, currently preparing for the JLPT N1. With a background in executive assistance and administration, she combines strong communication and organizational skills with a passion for manga, anime, and Japanese culture. She practices manga-style illustration, watercolor, and Japanese calligraphy, and enjoys exploring different forms of Japanese art. At OSA, she supports international students and manga instructors by bridging language and cultural communication, helping students communicate more comfortably and confidently in the classroom.",
+    imageSrc: "/cindy.jpg",
+    highlights: [
+      "French-English bilingual with advanced Japanese (JLPT N1)",
+      "Background in executive assistance and administration",
+      "Practices manga-style illustration, watercolor, and Japanese calligraphy",
+      "Bridges language and cultural gaps for international students",
     ],
   },
 ];

@@ -9,13 +9,14 @@
  * Sections in scroll order:
  *   1. HeroSection       - Full-viewport CTA with founding pillars
  *   2. AboutSection      - School mission and Sean Ngo's story
- *   3. FacilitiesSection - Real campus photography and facility features
- *   4. ProgramsSection   - Three programs (A/B/C) with real photography
- *   5. FacultySection    - Sean Ngo founder profile + faculty CTA
- *   6. TuitionSection    - Transparent pricing breakdown
- *   7. VisaSection       - Cultural visa pathway guide
- *   8. FAQSection        - Accordion FAQ
- *   9. EnrollSection     - Enrollment enquiry form
+ *   3. LocationSection   - Campus location with embedded Google Map
+ *   4. FacilitiesSection - Real campus photography and facility features
+ *   5. ProgramsSection   - Three programs (A/B/C) with real photography
+ *   6. FacultySection    - Faculty profiles with portraits and bios
+ *   7. TuitionSection    - Transparent pricing breakdown
+ *   8. VisaSection       - Cultural visa pathway guide
+ *   9. FAQSection        - Accordion FAQ
+ *  10. EnrollSection     - Enrollment enquiry form
  */
 
 import dynamic from "next/dynamic";
@@ -24,6 +25,11 @@ import { ColorStrip } from "@/components/sections/ColorStrip";
 import { AboutSection } from "@/components/sections/AboutSection";
 
 // Lazy load below-the-fold sections for better performance
+const LocationSection = dynamic(() =>
+  import("@/components/sections/LocationSection").then((mod) => ({
+    default: mod.LocationSection,
+  })),
+);
 const FacilitiesSection = dynamic(() =>
   import("@/components/sections/FacilitiesSection").then((mod) => ({
     default: mod.FacilitiesSection,
@@ -66,6 +72,7 @@ export default function HomePage() {
       <ColorStrip />
       <HeroSection />
       <AboutSection />
+      <LocationSection />
       <FacilitiesSection />
       <ProgramsSection />
       <FacultySection />

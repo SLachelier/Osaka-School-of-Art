@@ -1,9 +1,10 @@
 ﻿/**
- * FacultySection - Showcases the OSA founder and lead instructor.
+ * FacultySection - Showcases the OSA teaching team.
  *
- * Until additional faculty are hired, this section presents Sean Ngo
- * in a prominent two-column layout (image left, bio right) rather than
- * a grid of cards, which would look sparse with a single entry.
+ * Displays all faculty members in a responsive grid layout, with each
+ * member's portrait, name, title, bio, and highlights. For instructors
+ * with a portfolio URL (like the manga instructor), a download link is
+ * prominently displayed.
  *
  * A "Join the Faculty" call-to-action invites prospective instructors
  * to get in touch, signalling that the teaching team is growing.
@@ -14,7 +15,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, Mail } from "lucide-react";
+import { CheckCircle2, Mail, Download } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { INSTRUCTORS } from "@/lib/constants";
@@ -23,8 +24,6 @@ import { fadeLeftVariants, fadeRightVariants } from "@/lib/animations";
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export function FacultySection() {
-  const founder = INSTRUCTORS[0];
-
   return (
     <section
       id="faculty"
@@ -47,84 +46,84 @@ export function FacultySection() {
               </span>
             </>
           }
-          subheading="OSA is led by a working artist who has spent years studying both Eastern and Western art traditions, and who built this school to share everything he knows."
+          subheading=""
           className="mb-16"
         />
 
-        {/* ── Founder card — two-column on desktop ─────────────────────────── */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
-          {/* Left: image */}
-          <motion.div
-            className="relative mx-auto w-full max-w-sm lg:max-w-none"
-            variants={fadeLeftVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="relative h-[480px] w-full overflow-hidden rounded-2xl border border-[var(--color-sumi-700)] bg-[var(--color-sumi-800)]">
-              <Image
-                src={founder.imageSrc}
-                alt={`Portrait of ${founder.name}, Founder of Osaka School of Art`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                loading="lazy"
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-sumi-950)]/60 to-transparent" />
+        {/* ── Faculty grid ──────────────────────────────────────────────────── */}
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          {INSTRUCTORS.map((instructor, index) => (
+            <motion.div
+              key={instructor.name}
+              className="flex flex-col gap-6"
+              variants={index % 2 === 0 ? fadeLeftVariants : fadeRightVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {/* Image card */}
+              <div className="relative h-[400px] w-full overflow-hidden rounded-2xl border border-[var(--color-sumi-700)] bg-[var(--color-sumi-800)]">
+                <Image
+                  src={instructor.imageSrc}
+                  alt={`Portrait of ${instructor.name}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-sumi-950)]/60 to-transparent" />
 
-              {/* Name badge overlaid on image */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-2xl font-bold text-[var(--color-washi-50)] font-display">
-                  {founder.name}
-                </p>
-                <p className="text-sm text-[var(--color-akane-400)] mt-0.5 font-medium">
-                  {founder.title}
-                </p>
+                {/* Name badge overlaid on image */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-2xl font-bold text-[var(--color-washi-50)] font-display">
+                    {instructor.name}
+                  </p>
+                  <p className="text-sm text-[var(--color-akane-400)] mt-0.5 font-medium">
+                    {instructor.title}
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
 
-          {/* Right: bio & highlights */}
-          <motion.div
-            className="flex flex-col gap-6"
-            variants={fadeRightVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <p className="text-base text-[var(--color-washi-300)] leading-relaxed">
-              {founder.bio}
-            </p>
+              {/* Bio & highlights */}
+              <div className="flex flex-col gap-4">
+                <p className="text-base text-[var(--color-washi-300)] leading-relaxed">
+                  {instructor.bio}
+                </p>
 
-            {/* Highlights */}
-            <ul className="flex flex-col gap-3">
-              {founder.highlights.map((h) => (
-                <li
-                  key={h}
-                  className="flex items-start gap-3 text-sm text-[var(--color-washi-200)]"
-                >
-                  <CheckCircle2
-                    size={16}
-                    className="text-[var(--color-cyan-500)] shrink-0 mt-0.5"
-                  />
-                  {h}
-                </li>
-              ))}
-            </ul>
+                {/* Highlights */}
+                <ul className="flex flex-col gap-2">
+                  {instructor.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex items-start gap-3 text-sm text-[var(--color-washi-200)]"
+                    >
+                      <CheckCircle2
+                        size={16}
+                        className="text-[var(--color-cyan-500)] shrink-0 mt-0.5"
+                      />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
 
-            {/* Divider */}
-            <div className="h-px w-full bg-gradient-to-r from-[var(--color-akane-600)] to-transparent" />
-
-            {/* Philosophy blurb */}
-            <blockquote className="border-l-2 border-[var(--color-akane-500)] pl-5">
-              <p className="text-base italic text-[var(--color-washi-200)] font-display leading-relaxed">
-                &ldquo;Another quote here...add later. Place holder text will be
-                filled here instead for now. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.&rdquo;
-              </p>
-            </blockquote>
-          </motion.div>
+                {/* Portfolio download button (if available) */}
+                {instructor.portfolioUrl && (
+                  <div className="mt-2">
+                    <Button
+                      href={instructor.portfolioUrl}
+                      variant="secondary"
+                      size="sm"
+                      external
+                    >
+                      <Download size={15} />
+                      Download Portfolio
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* ── Join the faculty CTA ─────────────────────────────────────────── */}

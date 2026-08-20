@@ -49,6 +49,8 @@ export interface Instructor {
   imageSrc: string;
   /** Notable works, publications, or achievements */
   highlights: string[];
+  /** Optional portfolio download URL */
+  portfolioUrl?: string;
 }
 
 // ─── Testimonials ─────────────────────────────────────────────────────────────

@@ -107,8 +107,9 @@ export function AboutSection() {
             {/* Founder quote — styled as a speech bubble */}
             <div className="speech-bubble mt-2 bg-[var(--color-sumi-900)]">
               <p className="text-base italic text-[var(--color-washi-200)] font-display leading-relaxed">
-                &ldquo;I built OSA because....etc. Enter quote here
-                later.&ldquo;
+                &ldquo;I built OSA because I wanted to create a place where
+                artists could learn and grow together while experiencing all
+                that Japan has to offer.&rdquo;
               </p>
               <p className="mt-3 text-sm text-[var(--color-cyan-500)]">
                 — Sean Ngo, Founder
