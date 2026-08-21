@@ -113,7 +113,7 @@ export const INSTRUCTORS: Instructor[] = [
     ],
   },
   {
-    name: "Taichi",
+    name: "Taichi Nakano",
     title: "Educator & Language Learning Specialist",
     bio: "Taichi is an educator and entrepreneur based in Osaka. In 2021, he founded Yukei Juku, a private learning center that provides individualized support and English-language programs for children and adults. He continuously conducts independent research into language learning, drawing on his own experience as a language learner and exploring effective methods of language acquisition, teaching and intercultural communication.",
     imageSrc: "/taichi.jpg",
@@ -126,12 +126,12 @@ export const INSTRUCTORS: Instructor[] = [
   {
     name: "Atsushi Sakaki",
     title: "Professional Mangaka & Manga Instructor",
-    bio: "Atsushi Sakaki is an accomplished manga artist, comic producer and representative director of A2C Production Co., Ltd. He debuted in 1985 in Kodansha's Monthly Shonen Magazine. He is currently writing and serializing 'The King of Hunger' which is being distributed worldwide. At OSA, he instructs students on how to become accomplished mangaka.",
+    bio: "Atsushi Sakaki is an accomplished manga artist, comic producer and representative director of A2C Production Co., Ltd. He debuted in 1985 in Kodansha's Monthly Shonen Magazine. He is currently writing and serializing 'The Lord of the Siege' which is being distributed worldwide. At OSA, he instructs students on how to become accomplished mangaka.",
     imageSrc: "/atsushi-sakaki.jpg",
     highlights: [
       "Debuted in Kodansha's Monthly Shonen Magazine (1985)",
       "Representative Director of A2C Production Co., Ltd.",
-      "Currently serializing 'The King of Hunger' with worldwide distribution",
+      "Currently serializing 'The Lord of the Siege' with worldwide distribution",
       "Teaches professional mangaka techniques and industry practices",
     ],
     portfolioUrl: "/佐佐木あつしポートフォリオ.pdf",
