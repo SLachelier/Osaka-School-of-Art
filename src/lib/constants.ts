@@ -137,7 +137,7 @@ export const INSTRUCTORS: Instructor[] = [
     portfolioUrl: "/佐佐木あつしポートフォリオ.pdf",
   },
   {
-    name: "Cindy",
+    name: "Cindy Lusbec",
     title: "Student Support & Cultural Liaison",
     bio: "Cindy is a French-English bilingual creative professional with advanced Japanese, currently preparing for the JLPT N1. With a background in executive assistance and administration, she combines strong communication and organizational skills with a passion for manga, anime, and Japanese culture. She practices manga-style illustration, watercolor, and Japanese calligraphy, and enjoys exploring different forms of Japanese art. At OSA, she supports international students and manga instructors by bridging language and cultural communication, helping students communicate more comfortably and confidently in the classroom.",
     imageSrc: "/cindy.jpg",
