@@ -220,7 +220,7 @@ export const FACILITY_IMAGES = [
     wide: false,
   },
   {
-    src: "/osa-building-outside-1.jpg",
+    src: "/OSA-building-outside-1.jpg",
     alt: "OSA building from outside",
     wide: false,
   },
