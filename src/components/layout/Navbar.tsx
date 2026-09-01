@@ -18,8 +18,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_ITEMS, ENROLL_HREF } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { useTheme } from "@/context/ThemeContext";
 import { cn } from "@/lib/utils";
 
 // ─── Animation variants ───────────────────────────────────────────────────────
@@ -50,7 +48,6 @@ const navbarVariants = {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export function Navbar() {
-  const { theme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -117,9 +114,7 @@ export function Navbar() {
             aria-label="Osaka School of Art — Home"
           >
             <Image
-              src={
-                theme === "dark" ? "/osa-logo-dark.png" : "/osa-logo-light.png"
-              }
+              src="/osa-logo-dark.png"
               alt="Osaka School of Art"
               width={214}
               height={55}
@@ -158,17 +153,15 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* ── Desktop controls: theme toggle + CTA ──────────────────────── */}
+          {/* ── Desktop controls: CTA ──────────────────────── */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
             <Button href={ENROLL_HREF} size="sm">
               Enroll Now
             </Button>
           </div>
 
-          {/* ── Mobile controls: theme toggle + hamburger ─────────────────── */}
+          {/* ── Mobile controls: hamburger ─────────────────── */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
             <button
               className="nav-hamburger p-2 text-[var(--color-washi-200)] hover:text-[var(--color-washi-50)] transition-colors cursor-pointer"
               onClick={() => setMobileOpen((prev) => !prev)}

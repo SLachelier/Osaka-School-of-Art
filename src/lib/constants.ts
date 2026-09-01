@@ -155,8 +155,8 @@ export const INSTRUCTORS: Instructor[] = [
 
 export const FACILITY_IMAGES = [
   {
-    src: "/osa-studio.jpg",
-    alt: "OSA studio view",
+    src: "/osa-openhouse.jpg",
+    alt: "Open house event at OSA",
     wide: true,
   },
   {
@@ -170,13 +170,13 @@ export const FACILITY_IMAGES = [
     wide: false,
   },
   {
-    src: "/osa-tables.jpg",
-    alt: "Classroom overview with tables",
+    src: "/osa-studio.jpg",
+    alt: "OSA studio view",
     wide: true,
   },
   {
-    src: "/osa-bookshelf.jpg",
-    alt: "Studio bookshelf with manga and art books",
+    src: "/osa-tables.jpg",
+    alt: "Classroom overview with tables",
     wide: true,
   },
   {
@@ -200,6 +200,11 @@ export const FACILITY_IMAGES = [
     wide: false,
   },
   {
+    src: "/osa-bookshelf.jpg",
+    alt: "Studio bookshelf with manga and art books",
+    wide: true,
+  },
+  {
     src: "/osa-windows2.jpg",
     alt: "Windows with a view outside",
     wide: true,
@@ -212,7 +217,7 @@ export const FACILITY_IMAGES = [
   {
     src: "/osa-greenery.jpg",
     alt: "Greenery area",
-    wide: false,
+    wide: true,
   },
   {
     src: "/student-work.jpg",
