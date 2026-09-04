@@ -1,2 +1,3 @@
 npm warn Unknown user config "". This will stop working in the next major version of npm.
 Resend email delivery failed: {"statusCode":403,"message":"The gmail.com domain is not verified. Please, add and verify your domain on https://resend.com/domains","name":"validation_error"}
+^C

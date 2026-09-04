@@ -128,7 +128,7 @@ export const INSTRUCTORS: Instructor[] = [
   {
     name: "Atsushi Sasaki",
     title: "Professional Mangaka & Manga Instructor",
-    bio: "Atsushi Sasaki is an accomplished manga artist, comic producer and representative director of A2C Production Co., Ltd. He debuted in 1985 in Kodansha's Monthly Shonen Magazine. He is currently writing and serializing 'The Lord of the Siege' which is being distributed worldwide. At OSA, he instructs students on how to become accomplished mangaka.",
+    bio: "Atsushi Sasaki is an accomplished manga artist, comic producer and representative director of AtoC Production Co., Ltd. He debuted in 1985 in Kodansha's Monthly Shonen Magazine. He is currently writing and serializing 'The Lord of the Siege' which is being distributed worldwide. At OSA, he instructs students on how to become accomplished mangaka.",
     imageSrc: "/atsushi-sasaki.jpg",
     highlights: [
       "Debuted in Kodansha's Monthly Shonen Magazine (1985)",

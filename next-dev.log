@@ -14,3 +14,9 @@
  GET / 200 in 135ms (next.js: 81ms, application-code: 54ms)
  GET / 200 in 82ms (next.js: 46ms, application-code: 37ms)
  POST /api/enroll 200 in 2.0s (next.js: 1772ms, application-code: 248ms)
+ GET / 200 in 492ms (next.js: 69ms, application-code: 422ms)
+ POST /api/enroll 200 in 210ms (next.js: 3ms, application-code: 207ms)
+  Reload env: .env.local
+ GET / 200 in 265ms (next.js: 188ms, application-code: 77ms)
+  Reload env: .env.local
+ GET / 200 in 129ms (next.js: 76ms, application-code: 52ms)
