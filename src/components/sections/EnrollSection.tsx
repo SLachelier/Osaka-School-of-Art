@@ -7,8 +7,7 @@
  * - Cohort info and deadline nudge
  * - Background uses a crimson gradient to signal action / urgency
  *
- * Form is client-side only for now; ready to wire to an API route or
- * a service like Resend, Formspree, etc.
+ * Submissions are delivered through the /api/enroll server endpoint.
  */
 
 "use client";
@@ -59,6 +58,7 @@ export function EnrollSection() {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   /** Update a single form field */
   const handleChange = (
@@ -69,18 +69,33 @@ export function EnrollSection() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  /**
-   * Handle form submission.
-   * TODO: Replace the simulated delay with a real API call to your
-   *       email service (e.g., `fetch("/api/enroll", { method: "POST", body: JSON.stringify(form) })`).
-   */
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate network latency — remove when integrating a real endpoint
-    await new Promise((res) => setTimeout(res, 1000));
-    setLoading(false);
-    setSubmitted(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const body = (await response.json()) as { error?: string };
+        throw new Error(body.error ?? "Unable to send your enquiry.");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Unable to send your enquiry. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -338,6 +353,15 @@ export function EnrollSection() {
                   </a>
                   . We will never share your information with third parties.
                 </p>
+
+                {error && (
+                  <p
+                    className="text-sm text-[var(--color-akane-400)]"
+                    role="alert"
+                  >
+                    {error}
+                  </p>
+                )}
 
                 {/* Submit */}
                 <Button

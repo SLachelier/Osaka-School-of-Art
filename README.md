@@ -189,6 +189,20 @@ All site content is centralized in `src/lib/constants.ts`:
 
 ## Deployment
 
+### Enrollment Email
+
+The enrollment form sends submissions to `osa.culturalvisa@gmail.com` through
+[Resend](https://resend.com). Before deploying, add these environment variables
+to your hosting provider:
+
+```bash
+RESEND_API_KEY=re_your_api_key
+RESEND_FROM_EMAIL="OSA Admissions <admissions@your-verified-domain.com>"
+```
+
+`RESEND_FROM_EMAIL` must use a sender address verified in Resend. A local
+`.env.local` file can use the same values; see `.env.example`.
+
 ### Vercel (Recommended)
 
 ```bash
