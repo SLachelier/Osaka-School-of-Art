@@ -1,0 +1,11 @@
+▲ Next.js 16.2.9 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.226:3000
+- Environments: .env.local
+✓ Ready in 1246ms
+[32m✔[0m [33mConsole Ninja[0m extension is connected to [33mNext.js[0m, see [36mhttps://tinyurl.com/2vt8jxzw[0m
+
+○ Compiling / ...
+ GET / 200 in 8.5s (next.js: 8.0s, application-code: 566ms)
+ POST /api/enroll 502 in 2.4s (next.js: 1943ms, application-code: 452ms)
+  Reload env: .env.local
