@@ -52,7 +52,7 @@ export function LocationSection() {
               <span className="text-[var(--color-akane-400)]">Osaka</span>
             </>
           }
-          subheading="Minutes from Tanimachi 6-chome station and walking distance to Osaka Castle"
+          subheading="Directly next to Tanimachi 6-chome station and walking distance to Osaka Castle"
           className="mb-16"
         />
 
