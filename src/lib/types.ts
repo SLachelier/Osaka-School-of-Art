@@ -47,6 +47,8 @@ export interface Instructor {
   bio: string;
   /** Image path relative to /public or an external URL */
   imageSrc: string;
+  /** Optional crop alignment for the instructor portrait */
+  imagePosition?: "center" | "top";
   /** Notable works, publications, or achievements */
   highlights: string[];
   /** Optional portfolio download URL */

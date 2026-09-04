@@ -67,7 +67,9 @@ export function FacultySection() {
                   src={instructor.imageSrc}
                   alt={`Portrait of ${instructor.name}`}
                   fill
-                  className="object-cover"
+                  className={`object-cover ${
+                    instructor.imagePosition === "top" ? "object-top" : ""
+                  }`}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   loading="lazy"
                 />

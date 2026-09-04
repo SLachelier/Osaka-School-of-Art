@@ -90,7 +90,7 @@ export function AboutSection() {
               manga teaching program primarily focused on allowing foreign
               students to learn directly from a professional mangaka in Japan.
               Our school is located one minute away from Tanimachi 6-Chome and
-              10 minutes from Shinsaibashi, and is one stop away from Osaka
+              15 minutes from Shinsaibashi, and is one stop away from Osaka
               Castle. Through our school, you can have the unique experience of
               living and learning in Japan.
             </p>

@@ -27,7 +27,7 @@ export const ENROLL_HREF = "#enroll";
 
 export const CONTACT_EMAIL = "osa.culturalvisa@gmail.com";
 export const CONTACT_ADDRESS_EN =
-  "Arles Tanimachi 4F-W, 6-4-6 Tanimachi, Chuo-ku, Osaka 542-0012";
+  "Earls Tanimachi 4F-W, 6-4-6 Tanimachi, Chuo-ku, Osaka 542-0012";
 export const CONTACT_ADDRESS_JP = "〒542-0012 中央区谷町6-4-6 アールズ谷町4階W";
 
 // ─── Programs ─────────────────────────────────────────────────────────────────
@@ -106,6 +106,7 @@ export const INSTRUCTORS: Instructor[] = [
     bio: "Sean Ngo is an accomplished Oil painter who graduated from the Academy of Art University in San Francisco. Originally working from a concept art background and transitioning to fine art, his skills have won him awards and his work has been displayed at various galleries. His next journey has brought him to Japan where he created OSA.",
     imageSrc:
       "https://static.wixstatic.com/media/e668a5_cbc95f28ff1647d5a89b16248567c729~mv2.jpg",
+    imagePosition: "top",
     highlights: [
       "Fine Art graduate — San Francisco art university",
       "Professional artist with experience in visual development and sequential art",
@@ -117,6 +118,7 @@ export const INSTRUCTORS: Instructor[] = [
     title: "Educator & Language Learning Specialist",
     bio: "Taichi is an educator and entrepreneur based in Osaka. In 2021, he founded Yukei Juku, a private learning center that provides individualized support and English-language programs for children and adults. He continuously conducts independent research into language learning, drawing on his own experience as a language learner and exploring effective methods of language acquisition, teaching and intercultural communication.",
     imageSrc: "/taichi.jpg",
+    imagePosition: "top",
     highlights: [
       "Founder of Yukei Juku private learning center (2021)",
       "Specializes in English-language education for diverse age groups",
@@ -124,10 +126,10 @@ export const INSTRUCTORS: Instructor[] = [
     ],
   },
   {
-    name: "Atsushi Sakaki",
+    name: "Atsushi Sasaki",
     title: "Professional Mangaka & Manga Instructor",
-    bio: "Atsushi Sakaki is an accomplished manga artist, comic producer and representative director of A2C Production Co., Ltd. He debuted in 1985 in Kodansha's Monthly Shonen Magazine. He is currently writing and serializing 'The Lord of the Siege' which is being distributed worldwide. At OSA, he instructs students on how to become accomplished mangaka.",
-    imageSrc: "/atsushi-sakaki.jpg",
+    bio: "Atsushi Sasaki is an accomplished manga artist, comic producer and representative director of A2C Production Co., Ltd. He debuted in 1985 in Kodansha's Monthly Shonen Magazine. He is currently writing and serializing 'The Lord of the Siege' which is being distributed worldwide. At OSA, he instructs students on how to become accomplished mangaka.",
+    imageSrc: "/atsushi-sasaki.jpg",
     highlights: [
       "Debuted in Kodansha's Monthly Shonen Magazine (1985)",
       "Representative Director of A2C Production Co., Ltd.",
@@ -141,6 +143,7 @@ export const INSTRUCTORS: Instructor[] = [
     title: "Student Support & Cultural Liaison",
     bio: "Cindy is a French-English bilingual creative professional with advanced Japanese, currently preparing for the JLPT N1. With a background in executive assistance and administration, she combines strong communication and organizational skills with a passion for manga, anime, and Japanese culture. She practices manga-style illustration, watercolor, and Japanese calligraphy, and enjoys exploring different forms of Japanese art. At OSA, she supports international students and manga instructors by bridging language and cultural communication, helping students communicate more comfortably and confidently in the classroom.",
     imageSrc: "/cindy.jpg",
+    imagePosition: "top",
     highlights: [
       "French-English bilingual with advanced Japanese (JLPT N1)",
       "Background in executive assistance and administration",

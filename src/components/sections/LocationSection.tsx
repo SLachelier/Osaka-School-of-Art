@@ -162,7 +162,7 @@ export function LocationSection() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--color-cyan-500)] mt-1">•</span>
-                  <span>10 minutes from Shinsaibashi</span>
+                  <span>15 minutes from Shinsaibashi</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--color-cyan-500)] mt-1">•</span>

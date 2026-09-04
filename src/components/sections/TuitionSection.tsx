@@ -13,7 +13,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { DollarSign, FileCheck, PiggyBank, CalendarDays } from "lucide-react";
+import { JapaneseYen, FileCheck, PiggyBank, CalendarDays } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { ENROLL_HREF } from "@/lib/constants";
@@ -23,11 +23,11 @@ import { staggerContainerVariants, fadeUpVariants } from "@/lib/animations";
 
 const BREAKDOWN = [
   {
-    icon: DollarSign,
+    icon: JapaneseYen,
     title: "Annual Tuition",
     yen: "¥1,000,000",
     eur: "€5,500",
-    usd: "$6,350",
+    usd: "1 million yen or $6,350",
     note: "Per year of study. Includes visa legal processing fees.",
   },
   {
