@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Root Layout - Osaka School of Art
  *
  * Responsibilities:
@@ -10,6 +10,7 @@
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollbarProgress } from "@/components/ui/ScrollbarProgress";
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
