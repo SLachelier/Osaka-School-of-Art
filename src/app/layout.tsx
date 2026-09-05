@@ -10,6 +10,7 @@
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollbarProgress } from "@/components/ui/ScrollbarProgress";
@@ -83,6 +84,20 @@ export default function RootLayout({
       lang="en"
       className={`${lato.variable} ${fjallaOne.variable} ${facileSans.variable} h-full antialiased`}
     >
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18180537472"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18180537472');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col pl-10">
         <ScrollbarProgress />
         <Navbar />
